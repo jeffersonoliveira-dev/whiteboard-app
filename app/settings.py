@@ -31,22 +31,23 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'frontend',
-    'drawnings',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'frontend',
+    'drawnings',
+    'knox',
+    'accounts',
 ]
 
 REST_FRAMEWORK = {  # added
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny'
-    ],
-    'DATETIME_FORMAT': "%m/%d/%Y %H:%M:%S",
+    'DEFAULT_AUTHENTICATION_CLASSES':
+    ('knox.auth.TokenAuthentication',)
 }
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
