@@ -11,6 +11,7 @@ django = "*"
 djangorestframework = "*"
 pylint-django = "*"
 django-rest-knox = "*"
+jedi = "*"
 
 [requires]
 python_version = "3.6"

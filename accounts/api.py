@@ -17,7 +17,6 @@ class RegisterAPI(generics.GenericAPIView):
             "token": AuthToken.objects.create(user)[1]
         })
 
-
 # Login API
 
 class LoginAPI(generics.GenericAPIView):
