@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Login from '../routes/Login'
+import Login from '../src/routes/Login'
 
 const App = () => {
   return (
