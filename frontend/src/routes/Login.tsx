@@ -1,4 +1,6 @@
-import React from 'react'
+import * as React from 'react'
+
+// form here to type and pass token
 
 export const Login = () => {
   return (
