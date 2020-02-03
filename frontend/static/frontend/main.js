@@ -100,47 +100,41 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var react_dom_1 = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var store_1 = __webpack_require__(/*! ./redux/store */ "./frontend/src/redux/store.ts");
+var index_1 = __webpack_require__(/*! ./store/index */ "./frontend/src/store/index.ts");
+var Login_1 = __webpack_require__(/*! ./routes/Login */ "./frontend/src/routes/Login.tsx");
 exports.App = function () {
-    return (React.createElement(react_redux_1.Provider, { store: store_1.store },
-        React.createElement(react_router_dom_1.HashRouter, null)));
+    return (React.createElement(react_redux_1.Provider, { store: index_1.store },
+        React.createElement(react_router_dom_1.HashRouter, null,
+            React.createElement(react_router_dom_1.Route, { exact: true, path: "/", component: Login_1.default }))));
 };
 react_dom_1.render(React.createElement(exports.App, null), document.getElementById('app'));
 
 
 /***/ }),
 
-/***/ "./frontend/src/redux/reducers/root-reducer.ts":
-/*!*****************************************************!*\
-  !*** ./frontend/src/redux/reducers/root-reducer.ts ***!
-  \*****************************************************/
+/***/ "./frontend/src/routes/Login.tsx":
+/*!***************************************!*\
+  !*** ./frontend/src/routes/Login.tsx ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InitialState = {};
-var ActionType;
-(function (ActionType) {
-    // types
-})(ActionType = exports.ActionType || (exports.ActionType = {}));
-exports.rootReducer = function (state, action) {
-    return exports.InitialState;
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+// form here to type and pass token
+exports.Login = function () {
+    return React.createElement("h1", null, " here is login ");
 };
-var rootDispatcher = /** @class */ (function () {
-    function rootDispatcher() {
-    }
-    return rootDispatcher;
-}());
-exports.rootDispatcher = rootDispatcher;
+exports.default = exports.Login;
 
 
 /***/ }),
 
-/***/ "./frontend/src/redux/store.ts":
+/***/ "./frontend/src/store/index.ts":
 /*!*************************************!*\
-  !*** ./frontend/src/redux/store.ts ***!
+  !*** ./frontend/src/store/index.ts ***!
   \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -148,9 +142,12 @@ exports.rootDispatcher = rootDispatcher;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var root_reducer_1 = __webpack_require__(/*! ../redux/reducers/root-reducer */ "./frontend/src/redux/reducers/root-reducer.ts");
 var redux_1 = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-exports.store = redux_1.createStore(root_reducer_1.rootReducer);
+var rootReducers = redux_1.combineReducers({
+// auth
+});
+var InitialState = {};
+var store = redux_1.createStore(rootReducers, InitialState);
 
 
 /***/ }),
