@@ -6,5 +6,3 @@ export const LOGIN_FAIL = 'LOGIN FAIL'
 export const LOGOUT_SUCCESS = 'LOGOUT SUCCESS'
 export const REGISTER_SUCCESS = 'REGISTER SUCCESS'
 export const REGISTER_FAIL = 'REGISTER FAIL'
-
-
