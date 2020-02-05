@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
+    'plugin:prettier/recommended',
     'standard'
   ],
   globals: {
@@ -21,8 +22,10 @@ module.exports = {
   },
   plugins: [
     'react',
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'prettier'
   ],
   rules: {
+    'prettier/prettier:error'
   }
-}
+};
