@@ -21,5 +21,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
-  rules: {}
+  rules: {
+    'space-before-function-paren': 'off'
+  }
 }
