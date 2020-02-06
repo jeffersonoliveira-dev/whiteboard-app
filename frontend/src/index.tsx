@@ -1,19 +1,26 @@
 import * as React from 'react'
 import { render } from 'react-dom'
-import { HashRouter as Router, Route } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import { store } from './store/index'
+import { authProvider } from './store/index'
 import Login from './routes/Login'
+import { HashRouter as Router, Route } from 'react-router-dom'
 
 type AppProps = {}
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      authProvider: any
+    }
+  }
+}
+
 export const App: React.FunctionComponent<AppProps> = () => {
   return (
-    <Provider store={store}>
+    <authProvider>
       <Router>
         <Route exact path="/" component={Login} />
       </Router>
-    </Provider>
+    </authProvider>
   )
 }
 

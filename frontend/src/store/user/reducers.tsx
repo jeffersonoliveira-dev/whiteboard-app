@@ -23,20 +23,10 @@ export interface ActionProps {
 }
 
 export interface PayloadProps {
-  token: string
+  token?: string
 }
 
-const initialState: initialState = {
-  token: localStorage.getItem('token'),
-  isAuthenticated: null,
-  isLoading: false,
-  user: null
-}
-
-export function authReducer(
-  state: initialState = initialState,
-  action: ActionProps
-): object {
+export function authReducer(state: initialState, action: ActionProps): object {
   // resume actions
   switch (action.type) {
     case USER_LOADING:
