@@ -27,7 +27,6 @@ export interface PayloadProps {
 }
 
 export function authReducer(state: initialState, action: ActionProps): object {
-  // resume actions
   switch (action.type) {
     case USER_LOADING:
       return {
