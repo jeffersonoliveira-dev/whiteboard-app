@@ -37,4 +37,3 @@ export const authProvider: React.FunctionComponent<ChildrenProps> = children => 
     </authContext.Provider>
   )
 }
-// fixed
