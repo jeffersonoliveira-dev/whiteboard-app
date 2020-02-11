@@ -9,4 +9,11 @@ import {
   REGISTER_FAIL
 } from './types'
 
+export const userLoaded = (payload: object) => {
+  return {
+    type: USER_LOADED,
+    payload: payload
+  }
+}
+
 // actions here
