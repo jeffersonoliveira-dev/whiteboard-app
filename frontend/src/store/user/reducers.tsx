@@ -45,7 +45,7 @@ export function authReducer(state: initialState, action: ActionProps): object {
       localStorage.setItem('token', action.payload.token)
       return {
         ...state,
-        ...action.payload,
+        token: action.payload,
         isAuthenticated: true,
         isLoading: false
       }
