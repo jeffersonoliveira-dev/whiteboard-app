@@ -1,19 +1,95 @@
+import React from 'react'
+import axios from 'axios'
+// eslint-disable-next-line no-unused-vars
+import { authContext, ValueProp, initialStateProps } from '../index'
 import {
   USER_LOADED,
   USER_LOADING,
-  AUTH_ERROR,
   LOGIN_SUCCESS,
-  LOGIN_FAIL,
-  LOGOUT_SUCCESS,
-  REGISTER_SUCCESS,
-  REGISTER_FAIL
+  REGISTER_SUCCESS
 } from './types'
 
-export const userLoaded = (payload: object) => {
-  return {
-    type: USER_LOADED,
-    payload: payload
+const { useContext } = React
+const config: HeadersProps = {
+  headers: {
+    'Content-Type': 'application/json'
   }
+}
+
+interface ConfigProps {
+  config: HeadersProps
+}
+
+interface HeadersProps {
+  headers: object
+}
+
+interface ServerResponse {
+  data: ServerData
+}
+
+interface ServerData {
+  data: object
+}
+
+interface dataObject {
+  username: string
+  password: string
+  email: string
+}
+
+export const loadUser = (getToken: object) => {
+  const { dispatch } = useContext<ValueProp | initialStateProps>(authContext)
+
+  dispatch({ type: USER_LOADING })
+
+  axios.get('/api/auth/user', getToken).then((res: ServerResponse) => {
+    dispatch({
+      type: USER_LOADED,
+      payload: res.data
+    })
+  })
+}
+
+export const login = (username: string, password: string) => {
+  const { dispatch } = useContext<ValueProp>(authContext)
+  const body: string = JSON.stringify({ username, password })
+
+  axios.post('/api/auth/login', body, config).then(res => {
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: res.data
+    })
+  })
+}
+
+export const register = (data: dataObject) => {
+  const { dispatch } = useContext<ValueProp>(authContext)
+  const { username, password, email } = data
+  const body: string = JSON.stringify({ username, password, email })
+
+  axios.post('/api/auth/register', body, config).then(res => {
+    dispatch({
+      type: REGISTER_SUCCESS,
+      payload: res.data
+    })
+  })
+}
+
+export const tokenConfig = () => {
+  const { state } = useContext<ValueProp>(authContext)
+  const token: string = state.token
+
+  if (token) {
+    const newConfig: HeadersProps = {
+      headers: {
+        Authorization: `Token ${token}`
+      }
+    }
+    return newConfig
+  }
+
+  return config
 }
 
 // actions here
