@@ -2,6 +2,7 @@ import * as React from 'react'
 import { render } from 'react-dom'
 import { authProvider } from './store/index'
 import Login from './routes/Login'
+import Home from './routes/Home'
 import { HashRouter as Router, Route } from 'react-router-dom'
 
 type AppProps = {}
@@ -17,7 +18,8 @@ export const App: React.FunctionComponent<AppProps> = () => {
   return (
     <authProvider>
       <Router>
-        <Route exact path="/" component={Login} />
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Home} />
       </Router>
     </authProvider>
   )
