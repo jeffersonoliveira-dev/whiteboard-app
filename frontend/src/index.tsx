@@ -13,9 +13,6 @@ declare global {
     }
   }
 }
-
-// form on login
-
 export const App: React.FunctionComponent<AppProps> = () => {
   return (
     <authProvider>
