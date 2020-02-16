@@ -19,7 +19,7 @@ export const App: React.FunctionComponent<AppProps> = () => {
     <authProvider>
       <Router>
         <Route exact path="/" component={Home} />
-        <Route path="/login" component={Home} />
+        <Route path="/login" component={Login} />
       </Router>
     </authProvider>
   )
