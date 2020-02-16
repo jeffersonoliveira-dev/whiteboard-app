@@ -14,6 +14,7 @@ declare global {
     }
   }
 }
+// hashrouter with auth
 export const App: React.FunctionComponent<AppProps> = () => {
   return (
     <authProvider>
