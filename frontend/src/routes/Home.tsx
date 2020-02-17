@@ -5,8 +5,18 @@ const Container = styled.div`
   text-align: center;
 `
 
+const Welcome = styled.div`
+  posiiton: absolute;
+  left: 50%;
+  top: 50%:
+`
+
 const Home = () => {
-  return <Container> this is home </Container>
+  return (
+    <Container>
+      <Welcome>DraWinning</Welcome>
+    </Container>
+  )
 }
 
 export default Home

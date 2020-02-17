@@ -4,7 +4,6 @@ import { authProvider } from './store/index'
 import Login from './routes/Login'
 import Home from './routes/Home'
 import { HashRouter as Router, Route } from 'react-router-dom'
-
 type AppProps = {}
 
 declare global {
@@ -14,7 +13,6 @@ declare global {
     }
   }
 }
-// hashrouter with auth
 export const App: React.FunctionComponent<AppProps> = () => {
   return (
     <authProvider>
