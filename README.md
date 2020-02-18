@@ -2,4 +2,4 @@
 Whiteboard app to draw with friends !
 
 
-current development : login page
+current development :  problem rendering styled components

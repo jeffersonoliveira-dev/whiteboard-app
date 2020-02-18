@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import Header from '../components/Header/Header'
 
 const Container = styled.div`
-  text-align: center;
+  height: 100vh;
+  width: 100vw;
 `
 
 const Welcome = styled.div`
