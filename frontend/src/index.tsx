@@ -4,6 +4,7 @@ import { AuthProvider } from './store/index'
 import Login from './routes/Login'
 import Home from './routes/Home'
 import { HashRouter as Router, Route } from 'react-router-dom'
+import GlobalStyles from './components/GlobalStyles'
 
 /* declare global { */
 /*   namespace JSX { */
@@ -20,6 +21,7 @@ export const App: React.FC = () => {
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
       </Router>
+      <GlobalStyles />
     </AuthProvider>
   )
 }

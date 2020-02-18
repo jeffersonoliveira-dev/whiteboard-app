@@ -86,6 +86,28 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/src/components/GlobalStyles.tsx":
+/*!**************************************************!*\
+  !*** ./frontend/src/components/GlobalStyles.tsx ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var GlobalStyles = styled_components_1.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\nbody {\n  height: 100%;\n  width: 100%;\n}\n"], ["\nbody {\n  height: 100%;\n  width: 100%;\n}\n"])));
+exports.default = GlobalStyles;
+var templateObject_1;
+
+
+/***/ }),
+
 /***/ "./frontend/src/components/Header/Header.tsx":
 /*!***************************************************!*\
   !*** ./frontend/src/components/Header/Header.tsx ***!
@@ -121,6 +143,7 @@ var index_1 = __webpack_require__(/*! ./store/index */ "./frontend/src/store/ind
 var Login_1 = __webpack_require__(/*! ./routes/Login */ "./frontend/src/routes/Login.tsx");
 var Home_1 = __webpack_require__(/*! ./routes/Home */ "./frontend/src/routes/Home.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+var GlobalStyles_1 = __webpack_require__(/*! ./components/GlobalStyles */ "./frontend/src/components/GlobalStyles.tsx");
 /* declare global { */
 /*   namespace JSX { */
 /*     interface IntrinsicElements { */
@@ -132,7 +155,8 @@ exports.App = function () {
     return (React.createElement(index_1.AuthProvider, null,
         React.createElement(react_router_dom_1.HashRouter, null,
             React.createElement(react_router_dom_1.Route, { exact: true, path: "/", component: Home_1.default }),
-            React.createElement(react_router_dom_1.Route, { path: "/login", component: Login_1.default }))));
+            React.createElement(react_router_dom_1.Route, { path: "/login", component: Login_1.default })),
+        React.createElement(GlobalStyles_1.default, null)));
 };
 react_dom_1.render(React.createElement(exports.App, null), document.getElementById('app'));
 
