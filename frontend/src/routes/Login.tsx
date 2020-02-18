@@ -5,8 +5,6 @@ const Container = styled.div`
   text-align: center;
 `
 
-const Form = styled.form``
-
 export const Login = () => {
   return <Container> here is login </Container>
 }

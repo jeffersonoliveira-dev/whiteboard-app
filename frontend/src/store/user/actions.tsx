@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 // eslint-disable-next-line no-unused-vars
-import { authContext, ValueProp, initialStateProps } from '../index'
+import { AuthContext, ValueProp, initialStateProps } from '../index'
 import {
   USER_LOADED,
   USER_LOADING,
@@ -39,7 +39,7 @@ interface dataObject {
 }
 
 export const loadUser = (getToken: object) => {
-  const { dispatch } = useContext<ValueProp | initialStateProps>(authContext)
+  const { dispatch } = useContext<ValueProp | any>(AuthContext)
 
   dispatch({ type: USER_LOADING })
 
@@ -52,7 +52,7 @@ export const loadUser = (getToken: object) => {
 }
 
 export const login = (username: string, password: string) => {
-  const { dispatch } = useContext<ValueProp>(authContext)
+  const { dispatch } = useContext<ValueProp>(AuthContext)
   const body: string = JSON.stringify({ username, password })
 
   axios.post('/api/auth/login', body, config).then(res => {
@@ -64,7 +64,7 @@ export const login = (username: string, password: string) => {
 }
 
 export const register = (data: dataObject) => {
-  const { dispatch } = useContext<ValueProp>(authContext)
+  const { dispatch } = useContext<ValueProp>(AuthContext)
   const { username, password, email } = data
   const body: string = JSON.stringify({ username, password, email })
 
@@ -77,7 +77,7 @@ export const register = (data: dataObject) => {
 }
 
 export const tokenConfig = () => {
-  const { state } = useContext<ValueProp>(authContext)
+  const { state } = useContext<ValueProp>(AuthContext)
   const token: string = state.token
 
   if (token) {
@@ -91,5 +91,3 @@ export const tokenConfig = () => {
 
   return config
 }
-
-// actions here

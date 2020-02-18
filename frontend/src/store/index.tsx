@@ -16,27 +16,27 @@ export const initialState: initialStateProps = {
   user: null
 }
 
-export interface ChildrenProps {
-  children?: React.ReactChildren
-}
-
 export interface ValueProp {
   state: initialStateProps
   dispatch: (action: ActionProps) => void
 }
 
-export const authContext = React.createContext<initialStateProps | any>(
+export const AuthContext = React.createContext<initialStateProps | any>(
   initialState
 )
 
-export const authProvider: React.FunctionComponent<ChildrenProps> = children => {
+interface childrenProps {
+  children?: React.ReactNode
+}
+
+export const AuthProvider: React.FC<childrenProps> = props => {
   const [state, dispatch] = React.useReducer<ValueProp | any>(
     authReducer,
     initialState
   )
   return (
-    <authContext.Provider value={{ state, dispatch }}>
-      {children}
-    </authContext.Provider>
+    <AuthContext.Provider value={{ state, dispatch }}>
+      {props.children}
+    </AuthContext.Provider>
   )
 }
