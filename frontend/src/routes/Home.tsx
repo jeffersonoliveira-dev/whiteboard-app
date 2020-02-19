@@ -6,7 +6,6 @@ const Container = styled.div`
   height: 100vh;
   width: 100vw;
 `
-
 const Welcome = styled.div`
   posiiton: absolute;
   left: 50%;
