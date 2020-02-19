@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import Header from '../components/Header/Header'
 
 const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%:
 `
+
 const Welcome = styled.div`
   posiiton: absolute;
   left: 50%;

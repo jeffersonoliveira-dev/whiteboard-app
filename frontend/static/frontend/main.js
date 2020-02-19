@@ -101,7 +101,7 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var GlobalStyles = styled_components_1.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\nbody, html {\n  height: 100%;\n  width: 100%;\n}\n"], ["\nbody, html {\n  height: 100%;\n  width: 100%;\n}\n"])));
+var GlobalStyles = styled_components_1.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\nbody {\n}\n"], ["\nbody {\n}\n"])));
 exports.default = GlobalStyles;
 var templateObject_1;
 
@@ -117,12 +117,20 @@ var templateObject_1;
 
 "use strict";
 
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var Container = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  top: 0;\n  background-color: skyblue;\n  width: 100%;\n"], ["\n  top: 0;\n  background-color: skyblue;\n  width: 100%;\n"])));
 var Header = function () {
-    return React.createElement("h1", null, "this is header");
+    return (React.createElement(Container, null,
+        React.createElement("h1", null, "this is header")));
 };
 exports.default = Header;
+var templateObject_1;
 
 
 /***/ }),
@@ -180,7 +188,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 var Header_1 = __webpack_require__(/*! ../components/Header/Header */ "./frontend/src/components/Header/Header.tsx");
-var Container = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 100vh;\n  width: 100vw;\n"], ["\n  height: 100vh;\n  width: 100vw;\n"])));
+var Container = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 100%;\n  width: 100%:\n"], ["\n  height: 100%;\n  width: 100%:\n"])));
 var Welcome = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  posiiton: absolute;\n  left: 50%;\n  top: 50%:\n  transform: translate(-50%,-50%);\n"], ["\n  posiiton: absolute;\n  left: 50%;\n  top: 50%:\n  transform: translate(-50%,-50%);\n"])));
 var Home = function () {
     return (React.createElement(Container, null,
