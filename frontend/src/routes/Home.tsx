@@ -4,14 +4,14 @@ import Header from '../components/Header/Header'
 
 const Container = styled.div`
   height: 100%;
-  width: 100%:
+  width: 100%;
 `
 
 const Welcome = styled.div`
-  posiiton: absolute;
+  position: absolute;
   left: 50%;
-  top: 50%:
-  transform: translate(-50%,-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
 `
 
 const Home = () => {

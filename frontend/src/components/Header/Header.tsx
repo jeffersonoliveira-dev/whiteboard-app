@@ -6,7 +6,6 @@ const Container = styled.div`
   background-color: skyblue;
   width: 100%;
 `
-
 const Header = () => {
   return (
     <Container>
