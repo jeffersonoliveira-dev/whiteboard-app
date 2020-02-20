@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -6,6 +7,9 @@ const Container = styled.div`
   background-color: skyblue;
   width: 100%;
 `
+
+// import link to /login here
+// make navbar
 const Header = () => {
   return (
     <Container>
