@@ -1,7 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
-body {
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 `
 

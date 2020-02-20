@@ -6,14 +6,6 @@ import Home from './routes/Home'
 import { HashRouter as Router, Route } from 'react-router-dom'
 import GlobalStyles from './components/GlobalStyles'
 
-/* declare global { */
-/*   namespace JSX { */
-/*     interface IntrinsicElements { */
-/*       AuthProvider: any */
-/*     } */
-/*   } */
-/* } */
-
 export const App: React.FC = () => {
   return (
     <AuthProvider>

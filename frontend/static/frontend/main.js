@@ -101,7 +101,7 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var GlobalStyles = styled_components_1.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\nbody {\n}\n"], ["\nbody {\n}\n"])));
+var GlobalStyles = styled_components_1.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\nhtml, body {\n  width: 100%;\n  margin: 0;\n  padding: 0;\n}\n"], ["\nhtml, body {\n  width: 100%;\n  margin: 0;\n  padding: 0;\n}\n"])));
 exports.default = GlobalStyles;
 var templateObject_1;
 
@@ -117,20 +117,45 @@ var templateObject_1;
 
 "use strict";
 
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var style_1 = __webpack_require__(/*! ./style */ "./frontend/src/components/Header/style.tsx");
+var Header = function () {
+    return (React.createElement("header", null,
+        React.createElement(style_1.NavBar, null,
+            React.createElement(style_1.Container, null,
+                React.createElement(style_1.Li, null,
+                    React.createElement(style_1.Logo, null, "DW")),
+                React.createElement(style_1.Li, null,
+                    React.createElement(style_1.LoginButton, { to: "/login" }, "Login"))))));
+};
+exports.default = Header;
+
+
+/***/ }),
+
+/***/ "./frontend/src/components/Header/style.tsx":
+/*!**************************************************!*\
+  !*** ./frontend/src/components/Header/style.tsx ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var Container = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  top: 0;\n  background-color: skyblue;\n  width: 100%;\n"], ["\n  top: 0;\n  background-color: skyblue;\n  width: 100%;\n"])));
-var Header = function () {
-    return (React.createElement(Container, null,
-        React.createElement("h1", null, "this is header")));
-};
-exports.default = Header;
-var templateObject_1;
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+exports.NavBar = styled_components_1.default.nav(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 30px;\n  width: 100%;\n  background-color: black;\n"], ["\n  height: 30px;\n  width: 100%;\n  background-color: black;\n"])));
+exports.Container = styled_components_1.default.ul(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  margin-top: 0;\n  justify-content: space-between;\n  background-color: skyblue;\n  padding: 10px;\n"], ["\n  display: flex;\n  margin-top: 0;\n  justify-content: space-between;\n  background-color: skyblue;\n  padding: 10px;\n"])));
+exports.Li = styled_components_1.default.li(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: block;\n  flex: 1;\n  list-style-type: none;\n  min-width: 100px;\n  height: 100%;\n"], ["\n  display: block;\n  flex: 1;\n  list-style-type: none;\n  min-width: 100px;\n  height: 100%;\n"])));
+exports.LoginButton = styled_components_1.default(react_router_dom_1.Link)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  float: right;\n"], ["\n  float: right;\n"])));
+exports.Logo = styled_components_1.default.div(templateObject_5 || (templateObject_5 = __makeTemplateObject([""], [""])));
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5;
 
 
 /***/ }),
@@ -152,13 +177,6 @@ var Login_1 = __webpack_require__(/*! ./routes/Login */ "./frontend/src/routes/L
 var Home_1 = __webpack_require__(/*! ./routes/Home */ "./frontend/src/routes/Home.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var GlobalStyles_1 = __webpack_require__(/*! ./components/GlobalStyles */ "./frontend/src/components/GlobalStyles.tsx");
-/* declare global { */
-/*   namespace JSX { */
-/*     interface IntrinsicElements { */
-/*       AuthProvider: any */
-/*     } */
-/*   } */
-/* } */
 exports.App = function () {
     return (React.createElement(index_1.AuthProvider, null,
         React.createElement(react_router_dom_1.HashRouter, null,
@@ -188,8 +206,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 var Header_1 = __webpack_require__(/*! ../components/Header/Header */ "./frontend/src/components/Header/Header.tsx");
-var Container = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 100%;\n  width: 100%:\n"], ["\n  height: 100%;\n  width: 100%:\n"])));
-var Welcome = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  posiiton: absolute;\n  left: 50%;\n  top: 50%:\n  transform: translate(-50%,-50%);\n"], ["\n  posiiton: absolute;\n  left: 50%;\n  top: 50%:\n  transform: translate(-50%,-50%);\n"])));
+var Container = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 100%;\n  width: 100%;\n"], ["\n  height: 100%;\n  width: 100%;\n"])));
+var Welcome = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n"], ["\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n"])));
 var Home = function () {
     return (React.createElement(Container, null,
         React.createElement(Header_1.default, null),
