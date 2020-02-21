@@ -211,7 +211,7 @@ var Welcome = styled_components_1.default.div(templateObject_2 || (templateObjec
 var Home = function () {
     return (React.createElement(Container, null,
         React.createElement(Header_1.default, null),
-        React.createElement(Welcome, null, "DraWinning")));
+        React.createElement(Welcome, null, " Welcome to DraWinning")));
 };
 exports.default = Home;
 var templateObject_1, templateObject_2;

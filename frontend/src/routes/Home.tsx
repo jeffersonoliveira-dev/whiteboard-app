@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <Container>
       <Header />
-      <Welcome>DraWinning</Welcome>
+      <Welcome> Welcome to DraWinning</Welcome>
     </Container>
   )
 }
