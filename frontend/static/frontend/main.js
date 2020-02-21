@@ -101,7 +101,7 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var GlobalStyles = styled_components_1.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\nhtml, body {\n  width: 100%;\n  margin: 0;\n  padding: 0;\n}\n"], ["\nhtml, body {\n  width: 100%;\n  margin: 0;\n  padding: 0;\n}\n"])));
+var GlobalStyles = styled_components_1.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\nhtml, body {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  overflow: hidden;\n  background-color: #1976d2;\n}\n"], ["\nhtml, body {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  overflow: hidden;\n  background-color: #1976d2;\n}\n"])));
 exports.default = GlobalStyles;
 var templateObject_1;
 
@@ -150,10 +150,10 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 Object.defineProperty(exports, "__esModule", { value: true });
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-exports.NavBar = styled_components_1.default.nav(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 30px;\n  width: 100%;\n  background-color: black;\n"], ["\n  height: 30px;\n  width: 100%;\n  background-color: black;\n"])));
-exports.Container = styled_components_1.default.ul(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  margin-top: 0;\n  justify-content: space-between;\n  background-color: skyblue;\n  padding: 10px;\n"], ["\n  display: flex;\n  margin-top: 0;\n  justify-content: space-between;\n  background-color: skyblue;\n  padding: 10px;\n"])));
-exports.Li = styled_components_1.default.li(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: block;\n  flex: 1;\n  list-style-type: none;\n  min-width: 100px;\n  height: 100%;\n"], ["\n  display: block;\n  flex: 1;\n  list-style-type: none;\n  min-width: 100px;\n  height: 100%;\n"])));
-exports.LoginButton = styled_components_1.default(react_router_dom_1.Link)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  float: right;\n"], ["\n  float: right;\n"])));
+exports.NavBar = styled_components_1.default.nav(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 30px;\n  width: 100%;\n"], ["\n  height: 30px;\n  width: 100%;\n"])));
+exports.Container = styled_components_1.default.ul(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  margin-top: 0;\n  justify-content: space-between;\n  background-color: #1976d2;\n  padding: 10px;\n"], ["\n  display: flex;\n  margin-top: 0;\n  justify-content: space-between;\n  background-color: #1976d2;\n  padding: 10px;\n"])));
+exports.Li = styled_components_1.default.li(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: block;\n  flex: 1;\n  list-style-type: none;\n  min-width: 100px;\n  height: 100%;\n  color: white;\n"], ["\n  display: block;\n  flex: 1;\n  list-style-type: none;\n  min-width: 100px;\n  height: 100%;\n  color: white;\n"])));
+exports.LoginButton = styled_components_1.default(react_router_dom_1.Link)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  float: right;\n  text-decoration: none;\n  color: white;\n"], ["\n  float: right;\n  text-decoration: none;\n  color: white;\n"])));
 exports.Logo = styled_components_1.default.div(templateObject_5 || (templateObject_5 = __makeTemplateObject([""], [""])));
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5;
 
@@ -206,12 +206,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var styled_components_1 = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 var Header_1 = __webpack_require__(/*! ../components/Header/Header */ "./frontend/src/components/Header/Header.tsx");
-var Container = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 100%;\n  width: 100%;\n"], ["\n  height: 100%;\n  width: 100%;\n"])));
-var Welcome = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n"], ["\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n"])));
+// import Waves from '../components/Waves/Waves'
+var Container = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 100%;\n  width: 100%;\n  background-color: skyblue;\n"], ["\n  height: 100%;\n  width: 100%;\n  background-color: skyblue;\n"])));
+var Welcome = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  top: 40%;\n  transform: translate(-50%, -50%);\n  display: block;\n"], ["\n  position: absolute;\n  left: 50%;\n  top: 40%;\n  transform: translate(-50%, -50%);\n  display: block;\n"])));
 var Home = function () {
     return (React.createElement(Container, null,
         React.createElement(Header_1.default, null),
-        React.createElement(Welcome, null, " Welcome to DraWinning")));
+        React.createElement(Welcome, null, "DraWinning")));
 };
 exports.default = Home;
 var templateObject_1, templateObject_2;
