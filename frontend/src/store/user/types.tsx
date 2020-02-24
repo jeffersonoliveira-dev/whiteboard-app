@@ -1,8 +1,0 @@
-export const USER_LOADED = 'USER LOADED,'
-export const USER_LOADING = 'USER LOADING '
-export const AUTH_ERROR = 'AUTH ERROR'
-export const LOGIN_SUCCESS = 'LOGIN SUCCESS'
-export const LOGIN_FAIL = 'LOGIN FAIL'
-export const LOGOUT_SUCCESS = 'LOGOUT SUCCESS'
-export const REGISTER_SUCCESS = 'REGISTER SUCCESS'
-export const REGISTER_FAIL = 'REGISTER FAIL'
