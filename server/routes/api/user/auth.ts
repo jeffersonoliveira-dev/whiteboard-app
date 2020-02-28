@@ -1,0 +1,9 @@
+const express = require("express");
+
+const router = express.Router();
+
+router.get("/auth", (req, res) => {
+  console.log("working");
+});
+
+module.exports = router;
