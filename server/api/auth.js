@@ -8,6 +8,7 @@ router.post("/login", (req, res) => {
 
 router.post("/signup", (req, res) => {
   // user sign up
+  // get user from client and store into mongo
 });
 
 router.post("/logout", (req, res) => {
