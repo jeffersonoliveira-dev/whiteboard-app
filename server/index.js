@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const cors = require("cors");
 const helmet = require("helmet");
 const api = require("./api/auth");
@@ -6,7 +7,7 @@ const authenticate = require("./api/auth-middleware");
 require("./db/index");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.SERVER_PORT || 3001;
 
 app.use(cors());
 app.use(authenticate);
