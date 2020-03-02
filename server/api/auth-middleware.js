@@ -3,7 +3,7 @@ const User = require("../db/model/user");
 
 const authenticate = async (req, res, next) => {
   try {
-    const oekn = req
+    const token = req
       .header("Authorization")
       .replace("Bearer", "")
       .trim();

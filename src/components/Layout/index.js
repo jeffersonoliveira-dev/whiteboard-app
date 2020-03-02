@@ -1,8 +1,12 @@
 import React from "react";
-import { Container } from "./styles";
+import { Container, Box } from "./styles";
 
 const Layout = props => {
-  return <Container>{props.children}</Container>;
+  return (
+    <Container>
+      <Box>{props.children}</Box>
+    </Container>
+  );
 };
 
 export default Layout;
