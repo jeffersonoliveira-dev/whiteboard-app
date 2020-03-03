@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 100%;
-  width: 100%;
-  background-color: skyblue;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 80%;
 `;
+
+export const FormContainer = styled.form``;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from "../../assets/drawing.svg";
 
 export const Container = styled.div`
   position: absolute;
@@ -10,12 +11,47 @@ export const Container = styled.div`
   width: 80%;
 `;
 
+export const LogoContainer = styled.div`
+  height: 70%;
+  width: 100%;
+  position: relative;
+  left: 0;
+  right: 80%;
+  display: flex;
+`;
+
+export const StyledLogo = styled(Logo)`
+  position: relative;
+  width: 60%;
+  heigth: 60%;
+`;
+
+export const AppTitle = styled.div`
+  position: relative;
+  top: 30%;
+  width: 30%;
+  margin: 0 auto;
+  font-size: 3rem;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  position: relative;
+  top: 20%;
+  width: 100%;
+  height: 30%;
+`;
+
 export const LoginButton = styled(Link)`
   text-decoration: none;
+  text-align: center;
+  float: right;
   background-color: #7289da;
   color: white;
   padding: 5px;
-  widht: 100%;
+  width: 30%;
   border-radius: 5px;
 `;
 

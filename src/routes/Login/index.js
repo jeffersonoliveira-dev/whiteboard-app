@@ -1,8 +1,15 @@
 import React from "react";
-import { Container } from "./styles";
+import Layout from "../../components/Layout/index";
+import { Container, FormContainer } from "./styles";
 
 const Login = () => {
-  return <Container>login component</Container>;
+  return (
+    <Layout>
+      <Container>
+        <FormContainer>form here</FormContainer>
+      </Container>
+    </Layout>
+  );
 };
 
 export default Login;
