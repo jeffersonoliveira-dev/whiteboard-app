@@ -39,9 +39,10 @@ export const AppTitle = styled.div`
 
 export const ButtonContainer = styled.div`
   position: relative;
+  display: flex;
+  justify-content: space-between;
   top: 20%;
   width: 100%;
-  height: 30%;
 `;
 
 export const LoginButton = styled(Link)`

@@ -17,6 +17,7 @@ const Home = () => (
         <AppTitle>DrawDat</AppTitle>
       </LogoContainer>
       <ButtonContainer>
+        <LoginButton to="/signup">signup</LoginButton>
         <LoginButton to="/login">login</LoginButton>
       </ButtonContainer>
     </Container>
