@@ -9,20 +9,18 @@ import {
   ButtonContainer
 } from "./styles";
 
-const Home = () => {
-  return (
-    <Layout>
-      <Container>
-        <LogoContainer>
-          <StyledLogo />
-          <AppTitle>DrawDat</AppTitle>
-        </LogoContainer>
-        <ButtonContainer>
-          <LoginButton to="/login">login</LoginButton>
-        </ButtonContainer>
-      </Container>
-    </Layout>
-  );
-};
+const Home = () => (
+  <Layout>
+    <Container>
+      <LogoContainer>
+        <StyledLogo />
+        <AppTitle>DrawDat</AppTitle>
+      </LogoContainer>
+      <ButtonContainer>
+        <LoginButton to="/login">login</LoginButton>
+      </ButtonContainer>
+    </Container>
+  </Layout>
+);
 
 export default Home;
