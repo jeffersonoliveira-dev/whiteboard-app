@@ -6,7 +6,7 @@ const api = require("./api/auth");
 require("./db/index");
 
 const app = express();
-const PORT = process.env.SERVER_PORT || 3001;
+const PORT = process.env.SERVER_PORT || 4000;
 
 // midlewares
 app.use(cors());

@@ -9,4 +9,11 @@ export const Container = styled.div`
   width: 80%;
 `;
 
-export const FormContainer = styled.form``;
+export const FormContainer = styled.form`
+  height: 100%;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+`;

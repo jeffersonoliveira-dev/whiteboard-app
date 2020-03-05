@@ -1,11 +1,15 @@
-import React from 'react';
-import Layout from '../../components/Layout/index';
-import { Container, FormContainer } from './styles';
+import React from "react";
+import { TextField } from "@material-ui/core";
+import { Container, FormContainer } from "./styles";
+import Layout from "../../components/Layout/index";
 
 const Login = () => (
   <Layout>
     <Container>
-      <FormContainer>form here</FormContainer>
+      <FormContainer>
+        <TextField id="outlined-basic" label="username" variant="outlined" />
+        <TextField id="outlined-basic" label="password" variant="outlined" />
+      </FormContainer>
     </Container>
   </Layout>
 );
