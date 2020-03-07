@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { TextField } from "@material-ui/core";
 
-
-export const Container = styled.div `
+export const Container = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
@@ -11,7 +10,7 @@ export const Container = styled.div `
   width: 80%;
 `;
 
-export const FormContainer = styled.form `
+export const FormContainer = styled.form`
   height: 100%;
   width: 100%;
   color: white;
@@ -20,8 +19,15 @@ export const FormContainer = styled.form `
   margin-top: 50px;
 `;
 
-
-export const StyledField = styled(TextField)
-`
+export const StyledField = styled(TextField)`
   color: white;
 `;
+
+export const LoginButton = styled.button`
+  color: white;
+  padding: 5px;
+  width: 30%;
+  border-radius: 5px;
+  background-color: #7289da;
+`;
+
