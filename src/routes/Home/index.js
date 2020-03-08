@@ -6,7 +6,7 @@ import {
   LogoContainer,
   StyledLogo,
   AppTitle,
-  ButtonContainer
+  ButtonContainer,
 } from "./styles";
 
 const Home = () => (

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Container, FormContainer, StyledField, SignUpButton,
 } from "./styles";
@@ -15,6 +16,7 @@ const SignUp = () => {
   return (
     <Layout>
       <Container>
+        <Link to="/">back</Link>
         <FormContainer>
           <StyledField
             id="outlined-basic"

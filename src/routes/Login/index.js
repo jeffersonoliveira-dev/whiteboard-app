@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Container, FormContainer, StyledField, LoginButton,
 } from "./styles";
@@ -13,6 +14,7 @@ const Login = () => {
   return (
     <Layout>
       <Container>
+        <Link to="/">back</Link>
         <FormContainer>
           <StyledField
             id="outlined-basic"
