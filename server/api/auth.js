@@ -1,19 +1,20 @@
 const express = require("express");
 const User = require("../db/model/user");
 const authenticate = require("../api/auth-middleware");
-const { ObjectId } = require("mongodb");
 
 const router = express.Router();
 
 router.post("/login", async (req, res) => {
   // user login
   try {
-    const user = await User.checkValidCredentials(
-      req.body.username,
-      req.body.password
-    );
-    const token = await user.newAuthToken();
-    res.send({ user, token });
+    // const user = await User.checkValidCredentials(
+    //   req.body.username,
+    //   req.body.password,
+    // );
+    //
+    // const token = await user.newAuthToken();
+    // res.send({ user, token });
+    // auth token here
   } catch (error) {
     res.status(400).send();
   }
@@ -34,9 +35,7 @@ router.post("/signup", async (req, res) => {
 router.post("/logout", authenticate, async (req, res) => {
   // user logout
   try {
-    req.user.tokens = req.user.tokens.filter(token => {
-      return token.token !== re.token;
-    });
+    req.user.tokens = req.user.tokens.filter((token) => token.token !== re.token);
     await req.user.save();
     res.send();
   } catch (erro) {
