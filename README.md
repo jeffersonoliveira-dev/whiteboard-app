@@ -1,1 +1,2 @@
-currently doing home page
+- [  ] auth login with jwt token
+- [  ] authenticate middleware
