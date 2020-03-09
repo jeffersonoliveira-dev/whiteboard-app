@@ -50,12 +50,23 @@ UserSchema.methods.newAuthToken = async function () {
 UserSchema.pre("save", async function (next) {
   const user = this;
   if (user.isModified("password")) {
-    user.password = await bcrypt.hash(user.password, 8);
+    user.password = await bcrypt.hash(user.password, 8); // change to 10
   }
   next();
 });
 
 const User = mongoose.model("User", UserSchema);
+UserSchema.methods.checkValidCredentials = async function (username, password) {
+  const user = await User.findOne({ username });
+
+  if (user) {
+    await bcrypt.compare(password, user.password, (err, isMatch) => {
+      if (err) throw err;
+      return isMatch;
+    });
+  } else {
+    console.log("username or password didnt match");
+  }
+};
 
 module.exports = User;
-

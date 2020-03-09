@@ -1,32 +1,33 @@
 const express = require("express");
+const bcrypt = require("bcryptjs");
 const User = require("../db/model/user");
 const authenticate = require("../api/auth-middleware");
 
 const router = express.Router();
 
 router.post("/login", async (req, res) => {
-  // user login
   try {
-    // const user = await User.checkValidCredentials(
-    //   req.body.username,
-    //   req.body.password,
-    // );
-    //
-    // const token = await user.newAuthToken();
-    // res.send({ user, token });
-    // auth token here
+    const user = await User.findOne({ username: req.body.username });
+    if (user) {
+      bcrypt.compare(req.body.password, user.password, (err, isMatch) => {
+        if (err) throw err;
+        return isMatch;
+      });
+    } else {
+      req.status(400).send("username or password is wrong");
+    }
+    const token = await user.newAuthToken();
+    res.send({ user, token });
   } catch (error) {
-    res.status(400).send();
+    res.status(400).send("couldnt login");
   }
 });
 
 router.post("/signup", async (req, res) => {
-  // user sign up
-  // get user from client and store into mongo
-  const user = new User(req.body);
   try {
+    const user = new User(req.body);
     const token = await user.newAuthToken();
-    res.status(201).send({ user, token }); // sending token to local storage
+    res.status(201).send({ user, token });
   } catch (e) {
     res.status(400).send(e);
   }
@@ -35,11 +36,13 @@ router.post("/signup", async (req, res) => {
 router.post("/logout", authenticate, async (req, res) => {
   // user logout
   try {
-    req.user.tokens = req.user.tokens.filter((token) => token.token !== re.token);
+    req.user.tokens = req.user.tokens.filter(
+      (token) => token.token !== req.token,
+    );
     await req.user.save();
     res.send();
-  } catch (erro) {
-    res.status(500).send();
+  } catch (error) {
+    res.status(500).send(error);
   }
 });
 

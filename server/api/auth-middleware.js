@@ -10,13 +10,16 @@ const authenticate = async (req, res, next) => {
 
     const decoded = jwt.verify(token, "drewdat");
 
-    const user = await User.findOne({ _id: decode._id, "tokens.token": token });
+    const user = await User.findOne({
+      _id: decoded._id,
+      "tokens.token": token,
+    });
 
     if (!user) {
       throw new Error();
     }
     req.token = token;
-    req.use = user;
+    req.user = user;
     next();
   } catch (error) {
     console.log(error);
