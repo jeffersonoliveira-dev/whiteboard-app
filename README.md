@@ -1,2 +1,3 @@
-- [  ] auth login with jwt token
-- [  ] authenticate middleware
+- [x] auth login with jwt token
+- [x] authenticate middleware
+- [  ] home/login/dashboard page
