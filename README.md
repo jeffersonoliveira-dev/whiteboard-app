@@ -1,3 +1,4 @@
 - [x] auth login with jwt token
 - [x] authenticate middleware
 - [  ] home/login/dashboard page
+- [  ] start the actual whiteboard
