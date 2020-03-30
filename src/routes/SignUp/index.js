@@ -1,40 +1,83 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
 import {
-  Container, FormContainer, StyledField, SignUpButton,
+  Container,
+  FormContainer,
+  StyledField,
+  Button,
+  LoginText,
+  Login,
+  Title,
 } from "./styles";
 import Layout from "../../components/Layout/index";
 
-const SignUp = () => {
+const styles = {
+  root: {
+    color: "white",
+    margin: "10px",
+  },
+  input: {
+    color: "white",
+  },
+  notchedOutline: {
+    borderWidth: "1px",
+    borderColor: "yellow !important",
+  },
+};
+
+// make title a link to /
+
+const SignUp = (props) => {
   const [state, setState] = useState(0);
+  const { classes } = props;
 
-  const handleButton = (event) => {
-    event.preventDefault();
-    console.log("clicked");
+  const handleSignUp = (e) => {
+    e.preventDefault();
   };
-
   return (
     <Layout>
       <Container>
-        <Link to="/">back</Link>
+        <Title>
+          {" "}
+          <Login> Draw Dat</Login>
+        </Title>
         <FormContainer>
           <StyledField
             id="outlined-basic"
             label="username"
             variant="outlined"
+            className={classes.root}
+            InputProps={{
+              className: classes.input,
+            }}
           />
           <StyledField
             id="outlined-basic"
             label="password"
             variant="outlined"
+            className={classes.root}
+            InputProps={{
+              className: classes.input,
+            }}
           />
-          <SignUpButton type="submit" onClick={handleButton}>
-            Sign Up
-          </SignUpButton>
+          <Button type="submit" onClick={handleSignUp}>
+            Sign up
+          </Button>
+          <LoginText>
+            Do you have an account?
+            {' '}
+            <Login to="/login">Log in</Login>
+          </LoginText>
         </FormContainer>
       </Container>
     </Layout>
   );
 };
 
-export default SignUp;
+SignUp.propTypes = {
+  classes: PropTypes.string.isRequired,
+};
+
+export default withStyles(styles)(SignUp);

@@ -2,11 +2,13 @@ import React from "react";
 import Layout from "../../components/Layout/index";
 import {
   Container,
-  LoginButton,
+  ButtonGhost,
   LogoContainer,
   StyledLogo,
   AppTitle,
   ButtonContainer,
+  SignupText,
+  SignUp,
 } from "./styles";
 
 const Home = () => (
@@ -17,9 +19,13 @@ const Home = () => (
         <AppTitle>DrawDat</AppTitle>
       </LogoContainer>
       <ButtonContainer>
-        <LoginButton to="/signup">signup</LoginButton>
-        <LoginButton to="/login">login</LoginButton>
+        <ButtonGhost to="/login">start</ButtonGhost>
       </ButtonContainer>
+      <SignupText>
+        Don&apos;t have an account?
+        {' '}
+        <SignUp to="/signup">Sign up</SignUp>
+      </SignupText>
     </Container>
   </Layout>
 );

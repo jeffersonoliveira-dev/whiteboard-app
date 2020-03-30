@@ -45,14 +45,40 @@ export const ButtonContainer = styled.div`
   width: 100%;
 `;
 
-export const LoginButton = styled(Link)`
+export const ButtonGhost = styled(Link)`
+  position: relative;
+  bottom: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid #7289da;
+  background-color: transparent;
   text-decoration: none;
-  text-align: center;
-  float: right;
-  background-color: #7289da;
   color: white;
-  padding: 5px;
-  width: 30%;
-  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  margin: 0 auto;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+  }
 `;
 
+export const SignupText = styled.div`
+  text-align: center;
+  position: relative;
+  top: 55px;
+  text-decoration: none;
+`;
+
+export const SignUp = styled(Link)`
+  text-decoration: none;
+  color: #7289da;
+`;

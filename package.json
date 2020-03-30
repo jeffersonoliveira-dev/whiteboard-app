@@ -5,6 +5,7 @@
     "dependencies": {
         "@material-ui/core": "^4.9.5",
         "@material-ui/icons": "^4.9.1",
+        "@material-ui/styles": "^4.9.6",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.4.1",
         "@testing-library/user-event": "^7.2.1",
@@ -16,6 +17,7 @@
         "helmet": "^3.21.3",
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.9.2",
+        "prop-types": "^15.7.2",
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
         "react-router-dom": "^5.1.2",
