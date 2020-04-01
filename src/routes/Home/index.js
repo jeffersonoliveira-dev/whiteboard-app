@@ -7,8 +7,6 @@ import {
   StyledLogo,
   AppTitle,
   ButtonContainer,
-  SignupText,
-  SignUp,
 } from "./styles";
 
 const Home = () => (
@@ -21,11 +19,6 @@ const Home = () => (
       <ButtonContainer>
         <ButtonGhost to="/login">start</ButtonGhost>
       </ButtonContainer>
-      <SignupText>
-        Don&apos;t have an account?
-        {' '}
-        <SignUp to="/signup">Sign up</SignUp>
-      </SignupText>
     </Container>
   </Layout>
 );

@@ -41,7 +41,7 @@ const SignUp = (props) => {
       <Container>
         <Title>
           {" "}
-          <Login> Draw Dat</Login>
+          <Login to="/"> Draw Dat</Login>
         </Title>
         <FormContainer>
           <StyledField
