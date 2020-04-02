@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+import React from "react";
+import { useForm } from "react-hook-form";
 import {
   Container,
   FormContainer,
-  StyledField,
+  FormLabel,
+  FormField,
   Button,
   LoginText,
   Login,
@@ -13,56 +12,32 @@ import {
 } from "./styles";
 import Layout from "../../components/Layout/index";
 
-const styles = {
-  root: {
-    color: "white",
-    margin: "10px",
-  },
-  input: {
-    color: "white",
-  },
-  notchedOutline: {
-    borderWidth: "1px",
-    borderColor: "yellow !important",
-  },
-};
-
 // make title a link to /
 
-const SignUp = (props) => {
-  const [state, setState] = useState(0);
-  const { classes } = props;
-
+const SignUp = () => {
   const handleSignUp = (e) => {
     e.preventDefault();
+    console.log("clicked");
+    // handle form
   };
+
   return (
     <Layout>
       <Container>
+        <FormField
+          type="input"
+          placeholder="name"
+          name="name"
+          id="name"
+          required
+        />
+        <FormLabel htmlFor="name">Name </FormLabel>
         <Title>
           {" "}
           <Login to="/"> Draw Dat</Login>
         </Title>
         <FormContainer>
-          <StyledField
-            id="outlined-basic"
-            label="username"
-            variant="outlined"
-            className={classes.root}
-            InputProps={{
-              className: classes.input,
-            }}
-          />
-          <StyledField
-            id="outlined-basic"
-            label="password"
-            variant="outlined"
-            className={classes.root}
-            InputProps={{
-              className: classes.input,
-            }}
-          />
-          <Button type="submit" onClick={handleSignUp}>
+          <Button to="/#" type="submit" onClick={handleSignUp}>
             Sign up
           </Button>
           <LoginText>
@@ -76,8 +51,4 @@ const SignUp = (props) => {
   );
 };
 
-SignUp.propTypes = {
-  classes: PropTypes.string.isRequired,
-};
-
-export default withStyles(styles)(SignUp);
+export default SignUp;

@@ -12,25 +12,25 @@ import AuthProvider from "./store/AuthProvider";
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Layout>
-          <Route exact path="/">
-            <Home />
-          </Route>
-        </Layout>
-        <Route path="/signup">
-          <SignUp />
+    <Router>
+      <Layout>
+        <Route exact path="/">
+          <Home />
         </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
+      </Layout>
+      <Route path="/signup">
+        <SignUp />
+      </Route>
+      <Route path="/login">
+        <Login />
+      </Route>
+      <AuthProvider>
         <Route path="/dashboard">
           <Dashboard />
         </Route>
-      </Router>
+      </AuthProvider>
       <GlobalStyles />
-    </AuthProvider>
+    </Router>
   );
 }
 
