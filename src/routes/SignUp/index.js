@@ -4,6 +4,7 @@ import {
   Container,
   FormContainer,
   FormLabel,
+  InputContainer,
   FormField,
   Button,
   LoginText,
@@ -24,18 +25,40 @@ const SignUp = () => {
   return (
     <Layout>
       <Container>
-        <FormField
-          type="input"
-          placeholder="name"
-          name="name"
-          id="name"
-          required
-        />
-        <FormLabel htmlFor="name">Name </FormLabel>
         <Title>
           {" "}
           <Login to="/"> Draw Dat</Login>
         </Title>
+
+        <InputContainer>
+          <FormField
+            type="input"
+            placeholder="username"
+            name="username"
+            id="username"
+            required
+            username
+          />
+          <FormLabel htmlFor="username" username>
+            username
+            {" "}
+          </FormLabel>
+        </InputContainer>
+        <InputContainer>
+          <FormField
+            type="password"
+            placeholder="password"
+            name="password"
+            id="password"
+            required
+            password
+          />
+          <FormLabel htmlFor="password" password>
+            password
+            {" "}
+          </FormLabel>
+        </InputContainer>
+
         <FormContainer>
           <Button to="/#" type="submit" onClick={handleSignUp}>
             Sign up

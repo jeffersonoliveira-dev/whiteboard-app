@@ -11,10 +11,6 @@ export const Container = styled.div`
   width: 80%;
 `;
 
-export const StyledField = styled(TextField)`
-  color: white;
-`;
-
 export const SignUpButton = styled.button`
   text-decoration: none;
   text-align: center;
@@ -78,7 +74,12 @@ export const FormContainer = styled.form`
   margin-top: 50px;
 `;
 
-export const FormField = styled.form`
+export const InputContainer = styled.div`
+  width: 100%;
+  margin-top: 40px;
+`;
+
+export const FormField = styled.input`
   font-family: inherit;
   width: 100%;
   border: 0;
@@ -88,7 +89,15 @@ export const FormField = styled.form`
   color: #fff;
   padding: 7px 0;
   background: transparent;
-  transition: border-color 0.2s;
+  display: block;
+
+  &:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+  }
 
   &::placeholder {
     color: transparent;
@@ -117,14 +126,14 @@ export const FormLabel = styled.label`
   }
 
   ${FormField}:placeholder-shown ~ & {
-    font-size: 1.3rem;
+    font-size: 1rem;
     cursor: text;
-    top: 20px;
+    top: ${(props) => (props.username ? "70px" : "150px")};
   }
 
   ${FormField}:focus ~ & {
     position: absolute;
-    top: 0;
+    top: ${(props) => (props.username ? "50px" : "120px")};
     display: block;
     transition: 0.2s;
     font-size: 1rem;
