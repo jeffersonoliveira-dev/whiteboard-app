@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import {
   Container,
   FormContainer,
@@ -16,7 +16,7 @@ import Layout from "../../components/Layout/index";
 // make title a link to /
 
 const SignUp = () => {
-  const handleSignUp = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     console.log("clicked");
     // handle form
@@ -60,7 +60,7 @@ const SignUp = () => {
         </InputContainer>
 
         <FormContainer>
-          <Button to="/#" type="submit" onClick={handleSignUp}>
+          <Button to="/#" type="submit" onClick={handleLogin}>
             Sign up
           </Button>
           <LoginText>

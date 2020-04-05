@@ -1,39 +1,76 @@
 import React from "react";
-import PropTypes from "prop-types";
-import axios from "axios";
-import { withStyles } from "@material-ui/core/styles";
-import Layout from "../../components/Layout/index";
+// import { useForm } from "react-hook-form";
 import {
   Container,
   FormContainer,
-  StyledField,
+  FormLabel,
+  InputContainer,
+  FormField,
   Button,
-  SignupText,
-  SignUp,
+  LoginText,
+  LoginButton,
+  Home,
   Title,
 } from "./styles";
+import Layout from "../../components/Layout/index";
 
-// change input render pls
+const Login = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log("clicked");
+    // handle form
+  };
 
-const Login = () => (
-  <Layout>
-    <Container>
-      <Title>
-        {" "}
-        <SignUp to="/">Draw Dat</SignUp>
-      </Title>
-      <FormContainer>
-        <StyledField id="outlined-basic" label="username" variant="outlined" />
-        <StyledField id="outlined-basic" label="password" variant="outlined" />
-        <Button type="submit">Login</Button>
-        <SignupText>
-          Not sure if you have an account?
-          {' '}
-          <SignUp to="/signup">Sign up</SignUp>
-        </SignupText>
-      </FormContainer>
-    </Container>
-  </Layout>
-);
+  return (
+    <Layout>
+      <Container>
+        <Title>
+          {" "}
+          <Home to="/"> Draw Dat</Home>
+        </Title>
+
+        <InputContainer>
+          <FormField
+            type="input"
+            placeholder="username"
+            name="username"
+            id="username"
+            required
+            username
+          />
+          <FormLabel htmlFor="username" username>
+            username
+            {" "}
+          </FormLabel>
+        </InputContainer>
+        <InputContainer>
+          <FormField
+            type="password"
+            placeholder="password"
+            name="password"
+            id="password"
+            required
+            password
+          />
+          <FormLabel htmlFor="password" password>
+            password
+            {" "}
+          </FormLabel>
+        </InputContainer>
+
+        <FormContainer>
+          <Button to="/#" type="submit" onClick={handleLogin}>
+            Sign up
+          </Button>
+          <LoginText>
+            Don&apos;t have an account?
+            {' '}
+            <Home to="/signup">Sign up</Home>
+          </LoginText>
+        </FormContainer>
+      </Container>
+    </Layout>
+  );
+};
 
 export default Login;
