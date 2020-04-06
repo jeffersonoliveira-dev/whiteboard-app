@@ -70,7 +70,6 @@ export const FormContainer = styled.form`
   color: white;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
 `;
 
 export const InputContainer = styled.div`

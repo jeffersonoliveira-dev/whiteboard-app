@@ -29,38 +29,38 @@ const Login = () => {
           <Home to="/"> Draw Dat</Home>
         </Title>
 
-        <InputContainer>
-          <FormField
-            type="input"
-            placeholder="username"
-            name="username"
-            id="username"
-            required
-            username
-          />
-          <FormLabel htmlFor="username" username>
-            username
-            {" "}
-          </FormLabel>
-        </InputContainer>
-        <InputContainer>
-          <FormField
-            type="password"
-            placeholder="password"
-            name="password"
-            id="password"
-            required
-            password
-          />
-          <FormLabel htmlFor="password" password>
-            password
-            {" "}
-          </FormLabel>
-        </InputContainer>
-
         <FormContainer>
+          <InputContainer>
+            <FormField
+              type="input"
+              placeholder="username"
+              name="username"
+              id="username"
+              required
+              username
+            />
+            <FormLabel htmlFor="username" username>
+              username
+              {" "}
+            </FormLabel>
+          </InputContainer>
+          <InputContainer>
+            <FormField
+              type="password"
+              placeholder="password"
+              name="password"
+              id="password"
+              required
+              password
+            />
+            <FormLabel htmlFor="password" password>
+              password
+              {" "}
+            </FormLabel>
+          </InputContainer>
+
           <Button to="/#" type="submit" onClick={handleLogin}>
-            Sign up
+            Login
           </Button>
           <LoginText>
             Don&apos;t have an account?

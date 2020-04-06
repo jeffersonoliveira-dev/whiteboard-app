@@ -24,6 +24,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
+  // check if user is not already taken
   try {
     const user = new User(req.body);
     const token = await user.newAuthToken();
