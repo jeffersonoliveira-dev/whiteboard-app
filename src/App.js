@@ -4,7 +4,7 @@ import Home from "./routes/Home/index";
 import Login from "./routes/Login/index";
 import SignUp from "./routes/SignUp/index";
 import Dashboard from "./routes/Dashboard/index";
-import { GlobalStyles } from "./components/GlobalStyles";
+import GlobalStyles from "./components/GlobalStyles";
 import Layout from "./components/Layout";
 import AuthProvider from "./store/AuthProvider";
 

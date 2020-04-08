@@ -6,9 +6,8 @@ import {
   FormLabel,
   InputContainer,
   FormField,
-  Button,
+  SubmitButton,
   LoginText,
-  LoginButton,
   Home,
   Title,
 } from "./styles";
@@ -59,9 +58,9 @@ const Login = () => {
             </FormLabel>
           </InputContainer>
 
-          <Button to="/#" type="submit" onClick={handleLogin}>
+          <SubmitButton to="/#" type="submit" onClick={handleLogin}>
             Login
-          </Button>
+          </SubmitButton>
           <LoginText>
             Don&apos;t have an account?
             {' '}

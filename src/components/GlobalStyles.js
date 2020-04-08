@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
+const GlobalStyles = createGlobalStyle`
   html {
    height: 100%;
    width: 100%;
@@ -16,3 +14,4 @@ export const GlobalStyles = createGlobalStyle`
   }
 `;
 
+export default GlobalStyles;

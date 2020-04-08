@@ -1,4 +1,6 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import {
@@ -8,21 +10,27 @@ import {
   InputContainer,
   FormField,
   SubmitButton,
-  Button,
   LoginText,
   Login,
   Title,
 } from "./styles";
 import Layout from "../../components/Layout/index";
 
-// make title a link to /
+// send token to local storage and user data to context/reducer;
 
-const SignUp = () => {
+const SignUp = (props) => {
   const { register, handleSubmit } = useForm();
 
   const handleSignUp = (data) => {
-    console.log(data);
-    axios.post("/api/signup", data).then((response) => console.log(response));
+    axios.post("/api/signup", data).then((response) => {
+      const token = response.data.token[response.data.token.length - 1];
+      if (response.data) {
+        localStorage.setItem("token", token);
+        // send user to context
+        return props.history.push("/dashboard");
+      }
+      return alert("this username is already taken");
+    });
   };
 
   return (
@@ -76,4 +84,8 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+SignUp.propTypes = {
+  history: PropTypes.string.isRequired,
+};
+
+export default withRouter(SignUp);

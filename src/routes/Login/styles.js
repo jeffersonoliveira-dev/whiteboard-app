@@ -21,7 +21,7 @@ export const LoginButton = styled.button`
   border-radius: 5px;
 `;
 
-export const Button = styled(Link)`
+export const SubmitButton = styled(Link)`
   position: relative;
   top: 40px;
   cursor: pointer;

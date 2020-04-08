@@ -25,12 +25,19 @@ router.post("/login", async (req, res) => {
 
 router.post("/signup", async (req, res) => {
   // check if user is not already taken
-  try {
-    const user = new User(req.body);
-    const token = await user.newAuthToken();
-    res.status(201).send({ user, token });
-  } catch (e) {
-    res.status(400).send(e);
+  const user = await User.findOne({ username: req.body.username });
+  res.send(!!user);
+
+  if (!user) {
+    try {
+      const newUser = new User(req.body);
+      const token = await newUser.newAuthToken();
+      res.status(201).send({ newUser, token });
+    } catch (e) {
+      res.status(400).send(e);
+    }
+  } else {
+    res.status(200).send(false);
   }
 });
 
