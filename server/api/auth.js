@@ -26,7 +26,6 @@ router.post("/login", async (req, res) => {
 router.post("/signup", async (req, res) => {
   // check if user is not already taken
   const user = await User.findOne({ username: req.body.username });
-  res.send(!!user);
 
   if (!user) {
     try {

@@ -2,8 +2,10 @@ const authReducer = (state, action) => {
   switch (action.type) {
     case "login":
       // resolve login
-      console.log("call de login aqui");
       return state;
+
+    case "auth":
+      return action.payload;
     default:
       return state;
   }

@@ -1,11 +1,11 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import AuthContext from "./index";
+import AuthContext, { initialState } from "./index";
 import authReducer from "./authReducer";
 
 const AuthProvider = (props) => {
   const { children } = props;
-  const [state, dispatch] = React.useReducer(authReducer, {});
+  const [state, dispatch] = React.useReducer(authReducer, initialState);
   return (
     <AuthContext.Provider value={[state, dispatch]}>
       {children}

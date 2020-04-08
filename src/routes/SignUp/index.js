@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
@@ -15,17 +15,21 @@ import {
   Title,
 } from "./styles";
 import Layout from "../../components/Layout/index";
+import AuthContext from "../../store/index";
 
 // send token to local storage and user data to context/reducer;
 
 const SignUp = (props) => {
   const { register, handleSubmit } = useForm();
+  const [globalState, dispatch] = useContext(AuthContext);
 
   const handleSignUp = (data) => {
     axios.post("/api/signup", data).then((response) => {
-      const token = response.data.token[response.data.token.length - 1];
       if (response.data) {
-        localStorage.setItem("token", token);
+        // dispatch ( newdata, type to reducer )
+        dispatch({ type: "auth", payload: response.data });
+
+        // localStorage.setItem("token", token);
         // send user to context
         return props.history.push("/dashboard");
       }
