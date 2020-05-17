@@ -6,6 +6,7 @@ import AuthContext from "../../store/index";
 const Dashboard = (props) => {
   // globalState working
   const [globalState, dispatch] = useContext(AuthContext);
+  console.log(globalState);
 
   return <Container> this is dashboard </Container>;
 };

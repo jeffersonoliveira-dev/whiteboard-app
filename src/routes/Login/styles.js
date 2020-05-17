@@ -21,7 +21,7 @@ export const LoginButton = styled.button`
   border-radius: 5px;
 `;
 
-export const SubmitButton = styled(Link)`
+export const SubmitButton = styled.button`
   position: relative;
   top: 40px;
   cursor: pointer;
@@ -106,10 +106,10 @@ export const FormField = styled.input`
     box-shadow: none;
   }
 `;
-
 export const FormLabel = styled.label`
   position: absolute;
-  top: 0;
+  top: 50px;
+  top: ${(props) => (props.username ? "50px" : "130px")};
   display: block;
   transition: 0.2s;
   font-size: 1rem;
@@ -131,7 +131,7 @@ export const FormLabel = styled.label`
 
   ${FormField}:focus ~ & {
     position: absolute;
-    top: ${(props) => (props.username ? "50px" : "120px")};
+    top: ${(props) => (props.username ? "50px" : "130px")};
     display: block;
     transition: 0.2s;
     font-size: 1rem;

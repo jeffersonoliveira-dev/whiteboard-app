@@ -1,5 +1,9 @@
-import React from "react";
-// import { useForm } from "react-hook-form";
+import React, { useContext } from "react";
+import PropTypes from 'prop-types'
+import { withRouter } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import AuthContext from "../../store/index";
 import {
   Container,
   FormContainer,
@@ -13,12 +17,29 @@ import {
 } from "./styles";
 import Layout from "../../components/Layout/index";
 
-const Login = () => {
-  const handleLogin = (e) => {
-    e.preventDefault();
-    console.log("clicked");
-    // handle form
+const Login = (props) => {
+  const { register, handleSubmit } = useForm();
+  const [globalState, dispatch] = useContext(AuthContext);
+
+  // create function before component renders
+  // check if localStorage have something
+  // call out server with localStorage data
+
+
+  const handleLogin = (data) => {
+    axios.post("/api/login", data).then((response) => {
+      if (response.data) {
+        // dispatch ( newdata, type to reducer )
+        dispatch({ type: "auth", payload: response.data });
+
+        // localStorage.setItem("token", token);
+        // send user to context
+        return props.history.push("/dashboard");
+      }
+      return alert("this username is already taken");
+    });
   };
+
 
   return (
     <Layout>
@@ -28,7 +49,7 @@ const Login = () => {
           <Home to="/"> Draw Dat</Home>
         </Title>
 
-        <FormContainer>
+        <FormContainer onSubmit={handleSubmit(handleLogin)}>
           <InputContainer>
             <FormField
               type="input"
@@ -37,6 +58,7 @@ const Login = () => {
               id="username"
               required
               username
+              ref={register}
             />
             <FormLabel htmlFor="username" username>
               username
@@ -51,6 +73,7 @@ const Login = () => {
               id="password"
               required
               password
+              ref={register}
             />
             <FormLabel htmlFor="password" password>
               password
@@ -58,9 +81,7 @@ const Login = () => {
             </FormLabel>
           </InputContainer>
 
-          <SubmitButton to="/#" type="submit" onClick={handleLogin}>
-            Login
-          </SubmitButton>
+          <SubmitButton type="submit">Login</SubmitButton>
           <LoginText>
             Don&apos;t have an account?
             {' '}
@@ -72,4 +93,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+Login.propTypes = {
+  history: PropTypes.string.isRequired,
+};
+
+export default withRouter(Login);
