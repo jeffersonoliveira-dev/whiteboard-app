@@ -21,18 +21,14 @@ const Login = (props) => {
   const { register, handleSubmit } = useForm();
   const [globalState, dispatch] = useContext(AuthContext);
 
-  // create function before component renders
-  // check if localStorage have something
-  // call out server with localStorage data
-  // axios('/api/login', { headers: {"Authorization" : `Bearer ${token}`} })
-  //     .then(res => {
-  //         console.log(res.data);
-
   useEffect(() => {
     // if token exists on localStorage, call server
     if (localStorage.getItem("token") !== null) {
-      // axios('/api/login',
+      // axios('/api/',
       // { headers: { "Authorization" : `Bearer ${localStorage.getItem("token")token}` } })
+      // .then( res => {
+      //    console.log(res.data)
+      // } )
     }
   }, []);
 
@@ -54,7 +50,6 @@ const Login = (props) => {
     <Layout>
       <Container>
         <Title>
-          {" "}
           <Home to="/"> Draw Dat</Home>
         </Title>
 
