@@ -1,7 +1,7 @@
 - [x] auth login with jwt token
 - [x] authenticate middleware
 - [x] home/login/dashboard page
-- [  ] send user to context
+- [x] send user to context
 - [  ] mess with context and try to save on the localStorage
 - [  ] start the process of authentication on dashboard // private route
 - [  ] start the actual whiteboard
