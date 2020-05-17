@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import PropTypes from 'prop-types'
+import React, { useContext, useEffect } from "react";
+import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -24,7 +24,17 @@ const Login = (props) => {
   // create function before component renders
   // check if localStorage have something
   // call out server with localStorage data
+  // axios('/api/login', { headers: {"Authorization" : `Bearer ${token}`} })
+  //     .then(res => {
+  //         console.log(res.data);
 
+  useEffect(() => {
+    // if token exists on localStorage, call server
+    if (localStorage.getItem("token") !== null) {
+      // axios('/api/login',
+      // { headers: { "Authorization" : `Bearer ${localStorage.getItem("token")token}` } })
+    }
+  }, []);
 
   const handleLogin = (data) => {
     axios.post("/api/login", data).then((response) => {
@@ -32,14 +42,13 @@ const Login = (props) => {
         // dispatch ( newdata, type to reducer )
         dispatch({ type: "auth", payload: response.data });
 
-        // localStorage.setItem("token", token);
+        localStorage.setItem("token", response.data.token[0]);
         // send user to context
         return props.history.push("/dashboard");
       }
       return alert("this username is already taken");
     });
   };
-
 
   return (
     <Layout>
