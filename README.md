@@ -5,4 +5,8 @@
 - [x] mess with context and try to save on the localStorage
 - [x] start the process of authentication on dashboard // private route
 
-- [  ] start the actual whiteboard
+- [  ] Dashboard
+- dashboard > game || history/saved drawings
+
+- [  ] whiteboard game
+

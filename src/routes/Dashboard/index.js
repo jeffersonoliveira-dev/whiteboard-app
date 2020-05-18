@@ -3,13 +3,11 @@ import React, { useContext } from "react";
 import { Container } from "./styles";
 import AuthContext from "../../store/index";
 
-const Dashboard = (props) => {
-  // globalState working
-  const [globalState, dispatch] = useContext(AuthContext);
-  console.log(globalState);
+const Dashboard = (props) =>
+// globalState working
+// const [globalState, dispatch] = useContext(AuthContext);
+// console.log(globalState);
 
-  return <Container> this is dashboard </Container>;
-};
-
+  <Container> this is dashboard </Container>;
 export default Dashboard;
 
