@@ -2,6 +2,7 @@
 - [x] authenticate middleware
 - [x] home/login/dashboard page
 - [x] send user to context
-- [  ] mess with context and try to save on the localStorage
-- [  ] start the process of authentication on dashboard // private route
+- [x] mess with context and try to save on the localStorage
+- [x] start the process of authentication on dashboard // private route
+
 - [  ] start the actual whiteboard

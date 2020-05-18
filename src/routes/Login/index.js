@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
@@ -24,11 +25,13 @@ const Login = (props) => {
   useEffect(() => {
     // if token exists on localStorage, call server
     if (localStorage.getItem("token") !== null) {
-      // axios('/api/',
-      // { headers: { "Authorization" : `Bearer ${localStorage.getItem("token")token}` } })
-      // .then( res => {
-      //    console.log(res.data)
-      // } )
+      axios("/api/user", {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      }).then((res) => {
+        dispatch({ type: "auth", payload: res.data });
+
+        return props.history.push("/dashboard");
+      });
     }
   }, []);
 
@@ -37,12 +40,10 @@ const Login = (props) => {
       if (response.data) {
         // dispatch ( newdata, type to reducer )
         dispatch({ type: "auth", payload: response.data });
-
-        localStorage.setItem("token", response.data.token[0]);
-        // send user to context
+        localStorage.setItem("token", response.data.token);
         return props.history.push("/dashboard");
       }
-      return alert("this username is already taken");
+      return alert("username or password wrong");
     });
   };
 
@@ -66,7 +67,6 @@ const Login = (props) => {
             />
             <FormLabel htmlFor="username" username>
               username
-              {" "}
             </FormLabel>
           </InputContainer>
           <InputContainer>
@@ -81,15 +81,13 @@ const Login = (props) => {
             />
             <FormLabel htmlFor="password" password>
               password
-              {" "}
             </FormLabel>
           </InputContainer>
 
           <SubmitButton type="submit">Login</SubmitButton>
           <LoginText>
             Don&apos;t have an account?
-            {' '}
-            <Home to="/signup">Sign up</Home>
+            <Home to="/signup"> Sign up</Home>
           </LoginText>
         </FormContainer>
       </Container>

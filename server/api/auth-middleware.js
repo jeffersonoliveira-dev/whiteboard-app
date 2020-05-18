@@ -3,15 +3,12 @@ const User = require("../db/model/user");
 
 const authenticate = async (req, res, next) => {
   try {
-    const token = req
-      .header("Authorization")
-      .replace("Bearer", "")
-      .trim();
+    const token = req.header("Authorization").replace("Bearer", "").trim();
 
     const decoded = jwt.verify(token, "drewdat");
 
     const user = await User.findOne({
-      _id: decoded._id,
+      _id: decoded.id,
       "tokens.token": token,
     });
 

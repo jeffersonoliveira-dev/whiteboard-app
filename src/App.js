@@ -7,6 +7,7 @@ import Dashboard from "./routes/Dashboard/index";
 import GlobalStyles from "./components/GlobalStyles";
 import Layout from "./components/Layout";
 import AuthProvider from "./store/AuthProvider";
+import PrivateRoute from "./routes/PrivateRoute";
 
 // make authentication on route dashboard
 
@@ -26,7 +27,7 @@ function App() {
           <Login />
         </Route>
         <Route path="/dashboard">
-          <Dashboard />
+          <PrivateRoute />
         </Route>
         <GlobalStyles />
       </Router>

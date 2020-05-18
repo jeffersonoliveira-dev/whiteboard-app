@@ -29,8 +29,7 @@ const SignUp = (props) => {
         // dispatch ( newdata, type to reducer )
         dispatch({ type: "auth", payload: response.data });
 
-        // localStorage.setItem("token", token);
-        // send user to context
+        localStorage.setItem("token", response.data.token);
         return props.history.push("/dashboard");
       }
       return alert("this username is already taken");
