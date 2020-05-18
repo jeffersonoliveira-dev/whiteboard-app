@@ -10,3 +10,9 @@
 
 - [  ] whiteboard game
 
+
+
+
+
+
+# check auth erro
