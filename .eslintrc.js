@@ -21,6 +21,6 @@ module.exports = {
     quotes: "off",
     "no-unused-vars": "off",
     "react/jsx-props-no-spreading": ["error", { custom: "ignore" }],
+    "no-underscore-dangle": "off",
   },
 };
-

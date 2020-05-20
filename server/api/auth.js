@@ -55,6 +55,7 @@ router.post("/logout", authenticate, async (req, res) => {
 
 router.get("/user", authenticate, async (req, res) => {
   // get user data if authenticated
+  console.log("ping here");
   res.send(req.user);
 });
 

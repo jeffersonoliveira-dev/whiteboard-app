@@ -25,9 +25,11 @@ const Login = (props) => {
   useEffect(() => {
     // if token exists on localStorage, call server
     if (localStorage.getItem("token") !== null) {
+      console.log("sending token to server");
       axios("/api/user", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       }).then((res) => {
+        console.log(res);
         dispatch({ type: "auth", payload: res.data });
 
         return props.history.push("/dashboard");
