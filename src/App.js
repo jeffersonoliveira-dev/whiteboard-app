@@ -28,8 +28,6 @@ function App() {
           </Layout>
         </Route>
         <Route path="/dashboard">
-          o
-          {' '}
           <PrivateRoute />
         </Route>
         <GlobalStyles />

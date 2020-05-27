@@ -4,6 +4,7 @@ import {
   Container, Display, Center, LeftBar, RightBar,
 } from "./styles";
 import AuthContext from "../../store/index";
+import SideBar from "./SideBar";
 
 const Dashboard = (props) => {
   const [globalState, dispatch] = useContext(AuthContext);
@@ -22,7 +23,9 @@ const Dashboard = (props) => {
   return (
     <Container>
       <Display>
-        <LeftBar />
+        <LeftBar>
+          <SideBar />
+        </LeftBar>
         <Center />
         <RightBar />
       </Display>

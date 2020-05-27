@@ -4,7 +4,18 @@ export const Container = styled.div`
   height: 100%;
   width: 100%;
 `;
-export const Display = styled.div``;
-export const LeftBar = styled.div``;
-export const Center = styled.div``;
-export const RightBar = styled.div``;
+
+export const Display = styled.div`
+  display: flex;
+`;
+
+// sidebar changes on mobile
+export const LeftBar = styled.div`
+  width: 30%;
+`;
+export const Center = styled.div`
+  width: 40%;
+`;
+export const RightBar = styled.div`
+  width: 30%;
+`;
