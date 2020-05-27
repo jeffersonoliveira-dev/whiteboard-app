@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import {
   Container, Display, Center, LeftBar, RightBar,
 } from "./styles";
@@ -10,11 +10,12 @@ const Dashboard = (props) => {
   useEffect(() => {
     // if token exists on localStorage, call server
     if (localStorage.getItem("token") !== null) {
-      axios("/api/user", {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      }).then((res) => {
-        dispatch({ type: "auth", payload: res.data });
+      dispatch({
+        type: "authenticate",
+        payload: localStorage.getItem("token"),
       });
+    } else {
+      props.history.push("/login");
     }
   }, []);
 
@@ -29,4 +30,8 @@ const Dashboard = (props) => {
   );
 };
 // globalState working
+Dashboard.propTypes = {
+  history: PropTypes.string.isRequired,
+};
+
 export default Dashboard;

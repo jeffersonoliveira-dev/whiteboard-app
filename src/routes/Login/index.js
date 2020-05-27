@@ -98,7 +98,7 @@ const Login = (props) => {
 };
 
 Login.propTypes = {
-  history: PropTypes.object.isRequired,
+  history: PropTypes.string.isRequired,
 };
 
 export default withRouter(Login);

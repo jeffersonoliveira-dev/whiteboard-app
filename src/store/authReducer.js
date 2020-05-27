@@ -4,10 +4,11 @@ const authReducer = (state, action) => {
   switch (action.type) {
     case "authenticate":
       axios("/api/user", {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      }).then((res) => {
-        // change default state here
-      });
+        headers: { Authorization: `Bearer ${action.payload}` },
+      }).then((res) => ({
+        ...state,
+        user: res.data,
+      }));
 
       return state; // new state with user changes
 
