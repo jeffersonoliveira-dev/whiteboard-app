@@ -11,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     font-family: Roboto;
     overflow: hidden;
+   background: #23272a;
   }
 `;
 

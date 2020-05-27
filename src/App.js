@@ -12,18 +12,24 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <Layout>
-          <Route exact path="/">
+        <Route exact path="/">
+          <Layout>
             <Home />
-          </Route>
-        </Layout>
+          </Layout>
+        </Route>
         <Route path="/signup">
-          <SignUp />
+          <Layout>
+            <SignUp />
+          </Layout>
         </Route>
         <Route path="/login">
-          <Login />
+          <Layout>
+            <Login />
+          </Layout>
         </Route>
         <Route path="/dashboard">
+          o
+          {' '}
           <PrivateRoute />
         </Route>
         <GlobalStyles />
