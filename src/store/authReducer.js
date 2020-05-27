@@ -1,8 +1,15 @@
+import axios from "axios";
+
 const authReducer = (state, action) => {
   switch (action.type) {
-    case "login":
-      // resolve login
-      return state;
+    case "authenticate":
+      axios("/api/user", {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      }).then((res) => {
+        // change default state here
+      });
+
+      return state; // new state with user changes
 
     case "auth":
       return action.payload;

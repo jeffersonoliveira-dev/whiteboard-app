@@ -5,7 +5,7 @@
 - [x] mess with context and try to save on the localStorage
 - [x] start the process of authentication on dashboard // private route
 
-- [  ] Dashboard
+- [x] Dashboard
 - dashboard > game || history/saved drawings
 
 - [  ] whiteboard game
@@ -15,4 +15,4 @@
 
 
 
-# check auth erro
+# redux methods that send token to server and alocate into storage

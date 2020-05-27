@@ -1,6 +1,10 @@
 import { createContext } from "react";
 
-export const initialState = {};
+export const initialState = {
+  user: "",
+  token: "",
+  history: [],
+};
 
 const AuthContext = createContext(initialState);
 

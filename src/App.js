@@ -4,11 +4,9 @@ import Home from "./routes/Home/index";
 import Login from "./routes/Login/index";
 import SignUp from "./routes/SignUp/index";
 import GlobalStyles from "./components/GlobalStyles";
-import Layout from "./components/Layout";
+import Layout from "./components/Layout/index";
 import AuthProvider from "./store/AuthProvider";
 import PrivateRoute from "./routes/PrivateRoute";
-
-// make authentication on route dashboard
 
 function App() {
   return (
