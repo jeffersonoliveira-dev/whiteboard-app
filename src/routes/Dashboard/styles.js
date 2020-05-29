@@ -11,7 +11,8 @@ export const Display = styled.div`
 
 // sidebar changes on mobile
 export const LeftBar = styled.div`
-  width: 30%;
+  width: 20%;
+  min-width: 300px;
 `;
 export const Center = styled.div`
   width: 40%;

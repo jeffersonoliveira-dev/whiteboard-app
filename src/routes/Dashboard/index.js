@@ -4,7 +4,7 @@ import {
   Container, Display, Center, LeftBar, RightBar,
 } from "./styles";
 import AuthContext from "../../store/index";
-import SideBar from "./SideBar";
+import SideBar from "../../components/Sidebar/index";
 
 const Dashboard = (props) => {
   const [globalState, dispatch] = useContext(AuthContext);
