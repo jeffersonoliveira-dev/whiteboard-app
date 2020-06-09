@@ -16,20 +16,3 @@ export const MContainer = styled.div`
   color: white;
   height: 100vh;
 `;
-
-export const AvatarArea = styled.div`
-  position: relative;
-  top: 100px;
-  width: 50%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-`;
-
-export const Avatar = styled.div`
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  background: white;
-`;
-

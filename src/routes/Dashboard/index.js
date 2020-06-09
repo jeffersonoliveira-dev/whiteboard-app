@@ -5,6 +5,8 @@ import {
 } from "./styles";
 import AuthContext from "../../store/index";
 import SideBar from "../../components/Sidebar/index";
+import History from "../../components/History/index";
+import CenterPanel from '../../components/CenterPanel/index';
 
 const Dashboard = (props) => {
   const [globalState, dispatch] = useContext(AuthContext);
@@ -26,8 +28,12 @@ const Dashboard = (props) => {
         <LeftBar>
           <SideBar />
         </LeftBar>
-        <Center />
-        <RightBar />
+        <Center>
+          <CenterPanel />
+        </Center>
+        <RightBar>
+        <History />
+        </RightBar>
       </Display>
     </Container>
   );
